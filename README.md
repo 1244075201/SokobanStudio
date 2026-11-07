@@ -41,4 +41,5 @@
 
 ## 截图与测试
 
-游戏截图待补充。15 个预设关卡已通过核心规则解法回放，核对了通关、步数、推动次数、连续撤销和重开。开发期间已在 Unity 编辑器中人工游玩。完整 Test Runner 结果、独立 Windows 构建，以及在全新环境中的存档和界面验收仍待确认。测试入口为 Window → General → Test Runner。
+游戏截图待补充。15 个预设关卡已通过核心规则解法回放，核对了通关、步数、推动次数、连续撤销和重开。开发期间已在 Unity 编辑器中人工游玩。本次 Unity Test Runner 验收通过 38 项 EditMode 和 4 项 PlayMode 测试，覆盖核心规则、草稿存取、编辑器历史、场景与试玩流程。Windows x64 Standalone 构建成功。独立播放器的人工交互与音量验收仍待完成。测试入口为 Window → General → Test Runner。
+
