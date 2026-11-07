@@ -1,0 +1,1 @@
+{"name":"Sokoban.PlayTests","references":["Sokoban.Core","Sokoban.Runtime","Unity.ugui"],"optionalUnityReferences":["TestAssemblies"]}

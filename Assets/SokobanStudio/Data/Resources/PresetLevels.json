@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "coordinateSystem": "0-based, origin top-left, x right, y down",
+  "levels": [
+    {
+      "id": "level_01",
+      "order": 1,
+      "name": "初次入库",
+      "width": 7,
+      "height": 7,
+      "designIntent": "用一个箱子教学移动、站位和连续推动",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal"
+      },
+      "rows": [
+        "#######",
+        "#.....#",
+        "#..G..#",
+        "#.....#",
+        "#..B..#",
+        "#....P#",
+        "#######"
+      ],
+      "verification": {
+        "solvable": true,
+        "shortestMoveCount": 4,
+        "pushesOnShortestMoveSolution": 2,
+        "minimumPushCount": 2,
+        "movesAmongMinimumPushSolutions": 4,
+        "shortestMoveSolution": "LLUU"
+      }
+    },
+    {
+      "id": "level_02",
+      "order": 2,
+      "name": "错误的捷径",
+      "width": 8,
+      "height": 8,
+      "designIntent": "单箱面对障碍，需要探索可行路径",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal"
+      },
+      "rows": [
+        "########",
+        "#...G..#",
+        "#.#.##.#",
+        "#.#.B..#",
+        "#...#..#",
+        "#.P.#..#",
+        "#......#",
+        "########"
+      ],
+      "verification": {
+        "solvable": true,
+        "shortestMoveCount": 27,
+        "pushesOnShortestMoveSolution": 4,
+        "minimumPushCount": 4,
+        "movesAmongMinimumPushSolutions": 27,
+        "shortestMoveSolution": "RDRRUUULRDDDLLUUUUDDLLUUURR"
+      }
+    },
+    {
+      "id": "level_03",
+      "order": 3,
+      "name": "双箱调度",
+      "width": 8,
+      "height": 8,
+      "designIntent": "两个箱子形成多目标路线规划",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal"
+      },
+      "rows": [
+        "########",
+        "#..G...#",
+        "#..B...#",
+        "#..#...#",
+        "#..B.G.#",
+        "#..P...#",
+        "#......#",
+        "########"
+      ],
+      "verification": {
+        "solvable": true,
+        "shortestMoveCount": 15,
+        "pushesOnShortestMoveSolution": 5,
+        "minimumPushCount": 5,
+        "movesAmongMinimumPushSolutions": 15,
+        "shortestMoveSolution": "LUUURLDDRRUURUL"
+      }
+    },
+    {
+      "id": "level_04",
+      "order": 4,
+      "name": "异形双目标",
+      "width": 7,
+      "height": 7,
+      "designIntent": "参考用户截图：一个箱子初始就在目标上，另一个需要绕行归位",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal"
+      },
+      "rows": [
+        "#######",
+        "#..G###",
+        "#..####",
+        "#*P..##",
+        "#..B.##",
+        "#..####",
+        "#######"
+      ],
+      "verification": {
+        "solvable": true,
+        "shortestMoveCount": 36,
+        "pushesOnShortestMoveSolution": 9,
+        "minimumPushCount": 9,
+        "movesAmongMinimumPushSolutions": 36,
+        "shortestMoveSolution": "DLURRRDLULLDDRULURUULDRDDRRULDLUULUR"
+      }
+    },
+    {
+      "id": "level_05",
+      "order": 5,
+      "name": "货物分流",
+      "width": 10,
+      "height": 8,
+      "designIntent": "中段双箱分流，规划不同目标的到达路线",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal"
+      },
+      "rows": [
+        "##########",
+        "#........#",
+        "#.G..G...#",
+        "#..##....#",
+        "#..B..B..#",
+        "#.#...#..#",
+        "#....P...#",
+        "##########"
+      ],
+      "verification": {
+        "solvable": true,
+        "shortestMoveCount": 31,
+        "pushesOnShortestMoveSolution": 12,
+        "minimumPushCount": 10,
+        "movesAmongMinimumPushSolutions": 31,
+        "shortestMoveSolution": "UURURRDDLUURULLLLLULLDDRDRRDRUU"
+      }
+    },
+    {
+      "id": "level_06",
+      "order": 6,
+      "name": "回形走廊",
+      "width": 11,
+      "height": 8,
+      "designIntent": "异形走廊：单箱从狭窄区域通过多次转向到达目标",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal"
+      },
+      "rows": [
+        "###########",
+        "#G....#####",
+        "#.##.B#####",
+        "#.#...#####",
+        "#.#....P###",
+        "#......####",
+        "###.....###",
+        "###########"
+      ],
+      "verification": {
+        "solvable": true,
+        "shortestMoveCount": 24,
+        "pushesOnShortestMoveSolution": 11,
+        "minimumPushCount": 9,
+        "movesAmongMinimumPushSolutions": 26,
+        "shortestMoveSolution": "LLULUURDDDRDLDLUUUURULLL"
+      }
+    },
+    {
+      "id": "level_07",
+      "order": 7,
+      "name": "临时腾挪",
+      "width": 11,
+      "height": 9,
+      "designIntent": "三个箱子需要协调通道和站位",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal"
+      },
+      "rows": [
+        "###########",
+        "#..G....###",
+        "#..B....###",
+        "#..##...###",
+        "#P.B..G..##",
+        "#..##....##",
+        "#....B...##",
+        "#......G.##",
+        "###########"
+      ],
+      "verification": {
+        "solvable": true,
+        "shortestMoveCount": 28,
+        "pushesOnShortestMoveSolution": 13,
+        "minimumPushCount": 9,
+        "movesAmongMinimumPushSolutions": 28,
+        "shortestMoveSolution": "UURRRRDRURULLLDLLDDRRRDDLDRR"
+      }
+    },
+    {
+      "id": "level_08",
+      "order": 8,
+      "name": "最终调度",
+      "width": 12,
+      "height": 9,
+      "designIntent": "异形多区域三箱综合关",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal"
+      },
+      "rows": [
+        "############",
+        "#...G....###",
+        "#...B....###",
+        "#.#.##...###",
+        "#.#..B...###",
+        "#P...##..###",
+        "###..B..G###",
+        "###.....G###",
+        "############"
+      ],
+      "verification": {
+        "solvable": true,
+        "shortestMoveCount": 34,
+        "pushesOnShortestMoveSolution": 18,
+        "minimumPushCount": 12,
+        "movesAmongMinimumPushSolutions": 38,
+        "shortestMoveSolution": "RRRDRRRUULLLDLUUULURDRRRURDDDDDLDR"
+      }
+    },
+    {
+      "id": "level_09",
+      "order": 9,
+      "name": "双仓分流",
+      "sourceType": "原创",
+      "width": 11,
+      "height": 8,
+      "designIntent": "双货箱在分隔墙附近跨区移动；需分辨站位路径而非直接朝目标推动。",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal",
+        " ": "void/outside_map"
+      },
+      "rows": [
+        "###########",
+        "#..G.G....#",
+        "#..#.#....#",
+        "#..B.B....#",
+        "#...#.....#",
+        "#P.....#..#",
+        "#.........#",
+        "###########"
+      ],
+      "verification": {
+        "solvable": true,
+        "verifiedMoveCount": 29,
+        "pushesOnVerifiedSolution": 8,
+        "isShortestMoveSolution": true,
+        "verifiedSolution": "UUUURRRDDLDLUULURDDRRRDRUURUL"
+      },
+      "notes": "原创地图，已验证"
+    },
+    {
+      "id": "level_10",
+      "order": 10,
+      "name": "错位调度",
+      "sourceType": "原创",
+      "width": 11,
+      "height": 8,
+      "designIntent": "障碍与两个目标点形成换向路径，要求绕行、反向推动与目标匹配。",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal",
+        " ": "void/outside_map"
+      },
+      "rows": [
+        "###########",
+        "#...G.G...#",
+        "#..##.#...#",
+        "#..B..B...#",
+        "#.#...#...#",
+        "#P........#",
+        "#.........#",
+        "###########"
+      ],
+      "verification": {
+        "solvable": true,
+        "verifiedMoveCount": 28,
+        "pushesOnVerifiedSolution": 11,
+        "isShortestMoveSolution": true,
+        "verifiedSolution": "UURRRDRUUDRRUULLDDRRDRUURULL"
+      },
+      "notes": "原创地图，已验证"
+    },
+    {
+      "id": "level_11",
+      "order": 11,
+      "name": "偏移货道",
+      "sourceType": "截图原第7关",
+      "width": 8,
+      "height": 6,
+      "designIntent": "两箱两目标，其中一箱初始归位，需重新调整站位和目标占用。",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal",
+        " ": "void/outside_map"
+      },
+      "rows": [
+        "########",
+        "####P..#",
+        "#..B*G.#",
+        "#......#",
+        "#..#####",
+        "########"
+      ],
+      "verification": {
+        "solvable": true,
+        "verifiedMoveCount": 28,
+        "pushesOnVerifiedSolution": 10,
+        "isShortestMoveSolution": true,
+        "verifiedSolution": "DLDLLURRRURRDDLLLULLDDRULURR"
+      },
+      "notes": "根据截图逐格还原可见棋盘，外围增加封闭墙边界；需人工比对"
+    },
+    {
+      "id": "level_12",
+      "order": 12,
+      "name": "曲折回仓",
+      "sourceType": "截图原第10关",
+      "width": 8,
+      "height": 8,
+      "designIntent": "三箱三目标，异形通路和窄转角组合。",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal",
+        " ": "void/outside_map"
+      },
+      "rows": [
+        "########",
+        "##P.####",
+        "##.B..##",
+        "###.#.##",
+        "#G#.#..#",
+        "#GB..#.#",
+        "#G...B.#",
+        "########"
+      ],
+      "verification": {
+        "solvable": true,
+        "verifiedMoveCount": 50,
+        "pushesOnVerifiedSolution": 11,
+        "isShortestMoveSolution": true,
+        "verifiedSolution": "RDRRDDRDDLLULLDLURRRDLLRRRRUULUULLDDUURRDDRDDLLULL"
+      },
+      "notes": "根据截图逐格还原可见棋盘，外围增加封闭墙边界；需人工比对"
+    },
+    {
+      "id": "level_13",
+      "order": 13,
+      "name": "双箱窄道",
+      "sourceType": "截图原第11关",
+      "width": 9,
+      "height": 6,
+      "designIntent": "双箱处于较窄右侧区域，目标集中左下，需要利用中间通路切换站位。",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal",
+        " ": "void/outside_map"
+      },
+      "rows": [
+        "#########",
+        "###..####",
+        "#.....B.#",
+        "#.#..#B.#",
+        "#.G.G#P.#",
+        "#########"
+      ],
+      "verification": {
+        "solvable": true,
+        "verifiedMoveCount": 41,
+        "pushesOnVerifiedSolution": 13,
+        "isShortestMoveSolution": true,
+        "verifiedSolution": "RUULLLULDRRRRDDLURULLLDDLLLUURRDRDLUUURDD"
+      },
+      "notes": "根据截图逐格还原可见棋盘，外围增加封闭墙边界；需人工比对"
+    },
+    {
+      "id": "level_14",
+      "order": 14,
+      "name": "六箱调度",
+      "sourceType": "截图原第8关",
+      "width": 8,
+      "height": 7,
+      "designIntent": "六箱六目标，已归位箱子也需要调度，两侧下方通道有约束。",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal",
+        " ": "void/outside_map"
+      },
+      "rows": [
+        "########",
+        "#..#...#",
+        "#.BB*G.#",
+        "#.G..G.#",
+        "#.G*BBP#",
+        "#...#..#",
+        "########"
+      ],
+      "verification": {
+        "solvable": true,
+        "verifiedMoveCount": 40,
+        "pushesOnVerifiedSolution": 12,
+        "isShortestMoveSolution": false,
+        "verifiedSolution": "DLUULLLDDRURURRUULLDDRRDDLULLDLLUUUURDRD"
+      },
+      "notes": "根据截图逐格还原可见棋盘，外围增加封闭墙边界；需人工比对"
+    },
+    {
+      "id": "level_15",
+      "order": 15,
+      "name": "七箱矩阵",
+      "sourceType": "截图原第9关",
+      "width": 9,
+      "height": 6,
+      "designIntent": "七箱七目标，左右两片底部可站位区，中间底部隔墙，考察多箱顺序。",
+      "legend": {
+        "#": "wall",
+        ".": "floor",
+        "P": "player",
+        "B": "box",
+        "G": "goal",
+        "*": "box_on_goal",
+        "+": "player_on_goal",
+        " ": "void/outside_map"
+      },
+      "rows": [
+        "#########",
+        "#...P...#",
+        "#GBBGBBG#",
+        "#BGGBGGB#",
+        "#...#...#",
+        "#########"
+      ],
+      "verification": {
+        "solvable": true,
+        "verifiedMoveCount": 64,
+        "pushesOnVerifiedSolution": 11,
+        "isShortestMoveSolution": false,
+        "verifiedSolution": "LLDURRDLURRRDLDDRRUDLLUUULLDRLDRUULLLDRURRDDLDLLUDRRURUULDURRRDL"
+      },
+      "notes": "根据截图逐格还原可见棋盘，外围增加封闭墙边界；需人工比对"
+    }
+  ]
+}
